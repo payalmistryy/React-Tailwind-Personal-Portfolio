@@ -1,0 +1,218 @@
+@import "tailwindcss";
+
+@property --laser-angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@theme {
+  --color-background: #fbf9ef;
+  --color-foreground: #1a1520;
+  --color-card: #f0ebe0;
+  --color-primary: #452a47;
+  --color-primary-foreground: #FFFFFF;
+  --color-secondary: #3b2840;
+  --color-secondary-foreground: #f0ebe0;
+  --color-muted: #e8e0d0;
+  --color-muted-foreground: #5a4a5c;
+  --color-border: #c9bfa8;
+  --color-highlight: #c4b0c6;
+  --color-surface: #ede8db;
+  --radius: 0.75rem;
+}
+
+html.dark {
+  --color-background: #1a1019;
+  --color-foreground: #f0ebe0;
+  --color-card: #251a28;
+  --color-primary: #c4b0c6;
+  --color-primary-foreground: #1a1019;
+  --color-secondary: #ede8db;
+  --color-secondary-foreground: #1a1019;
+  --color-muted: #2d1f33;
+  --color-muted-foreground: #a89bb5;
+  --color-border: #3b2840;
+  --color-highlight: #7a5c7e;
+  --color-surface: #25182a;
+}
+
+/* Dark mode: keep laser-button (Resume) text deep purple on its cream pill */
+html.dark .laser-button {
+  --color-foreground: #452a47;
+}
+
+/* Dark mode: keep glass-skill cards cream/gold with dark text (light-mode island) */
+html.dark .glass-skill {
+  --color-foreground: #1a1520;
+  --color-primary: #452a47;
+  --color-muted-foreground: #5a4a5c;
+  background-color: color-mix(in srgb, #e8c96a 25%, #fbf9ef);
+  border: 1px solid color-mix(in srgb, #e8c96a 40%, transparent);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--color-background);
+    color: var(--color-foreground);
+    font-family: "Inter", sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  .font-serif {
+    font-family: "Playfair Display", serif;
+  }
+}
+
+@layer components {
+  .glass {
+    background-color: color-mix(in srgb, var(--color-surface) 50%, transparent);
+    backdrop-filter: blur(16px);
+    border: 1px solid color-mix(in srgb, var(--color-border) 50%, transparent);
+  }
+  .glass-skill {
+    background-color: color-mix(in srgb, #e8c96a 25%, transparent);
+    backdrop-filter: blur(16px);
+    border: 1px solid color-mix(in srgb, #e8c96a 40%, transparent);
+  }
+  .glass-primary {
+    background-color: color-mix(in srgb, #452a47 12%, transparent);
+    backdrop-filter: blur(16px);
+    border: 1px solid color-mix(in srgb, #452a47 20%, transparent);
+  }
+  .glass-strong {
+    background-color: color-mix(in srgb, var(--color-surface) 80%, transparent);
+    backdrop-filter: blur(24px);
+    border: 1px solid color-mix(in srgb, var(--color-border) 60%, transparent);
+  }
+   .hero-gradient {
+    background: var(--color-background);
+  }
+   .glow-text {
+    text-shadow: 0 0 10px rgba(69, 42, 71, 0.35),
+                 0 0 30px rgba(69, 42, 71, 0.2),
+                 0 0 60px rgba(196, 176, 198, 0.3);
+  }
+  .glow-border {
+    box-shadow: 0 0 20px color-mix(in srgb, var(--color-primary) 20%, transparent),
+                0 0 40px color-mix(in srgb, var(--color-highlight) 15%, transparent);
+    transition: box-shadow 0.3s ease;
+  }
+  .glow-border:hover {
+    box-shadow: 0 0 30px color-mix(in srgb, var(--color-primary) 30%, transparent),
+                0 0 60px color-mix(in srgb, var(--color-highlight) 25%, transparent);
+  }
+  .laser-button {
+    isolation: isolate;
+  }
+  .laser-button::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 9999px;
+    padding: 2px;
+    background: conic-gradient(
+      from var(--laser-angle),
+      transparent 0%,
+      #452a47 6%,
+      #9b7a9e 12%,
+      transparent 20%
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    animation: laser-orbit 1.8s linear infinite;
+    z-index: 0;
+  }
+  .laser-button::after {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    border-radius: 9999px;
+    background: color-mix(in srgb, #452a47 18%, #fbf9ef);
+    backdrop-filter: blur(16px);
+    transition: background 0.3s ease;
+    z-index: 1;
+  }
+  .laser-button:hover::after {
+    background: color-mix(in srgb, #452a47 28%, #fbf9ef);
+  }
+}
+
+@layer utilities {
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+      filter: blur(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0)
+    }
+  }
+  @keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    filter: blur(4px);
+    transition: opacity 0.7s ease, transform 0.7s ease, filter 0.7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+  @keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+  }
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+  .reveal-delay-100 { transition-delay: 0.1s; }
+  .reveal-delay-200 { transition-delay: 0.2s; }
+  .reveal-delay-300 { transition-delay: 0.3s; }
+  .reveal-delay-400 { transition-delay: 0.4s; }
+  .reveal-delay-600 { transition-delay: 0.6s; }
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+    width: max-content;
+  }
+  .animate-fade-in {
+    animation: fade-in 0.8s ease-out both;
+  }
+  .animation-delay-100 {
+    animation-delay: 0.1s;
+  }
+  .animation-delay-200 {
+    animation-delay: 0.2s;
+  }
+  .animation-delay-400 {
+    animation-delay: 0.4s;
+  }
+  .animation-delay-600 {
+    animation-delay: 0.6s;
+  }
+  @keyframes laser-orbit {
+    to {
+      --laser-angle: 360deg;
+    }
+  }
+}
