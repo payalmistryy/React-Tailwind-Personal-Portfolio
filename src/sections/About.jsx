@@ -58,7 +58,7 @@ export const About = () => {
                     {/* Right Column - Stats/Highlights */}
                     <div className="grid grid-cols-2 gap-6 animate-fade-in animation-delay-400">
                         <div className="glass-skill rounded-2xl p-6 text-center animate-float">
-                            <h3 className="text-3xl font-bold text-primary">3+</h3>
+                            <h3 className="text-3xl font-bold text-primary">5+</h3>
                             <p className="text-sm text-muted-foreground mt-2">Projects Built</p>
                         </div>
                         <div className="glass-skill rounded-2xl p-6 text-center animate-float" style={{ animationDelay: "1s" }}>

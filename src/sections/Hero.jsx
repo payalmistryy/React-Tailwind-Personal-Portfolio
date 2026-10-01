@@ -80,7 +80,7 @@ export const Hero = () => {
                                 <span className="glow-text">Payal Mistry</span>
                                 <br />
                                 <span className="font-serif italic text-3xl md:text-5xl" style={{color: "#7a5c7e"}}>
-                                    Software Developer
+                                    Software Engineer
                                 </span>
                             </h1>
                         </div>
@@ -135,7 +135,7 @@ export const Hero = () => {
                             <div className="absolute bottom-4 left-1/2 -translate-x-1/2 glass rounded-full px-3.5 py-1.5 whitespace-nowrap shadow-lg">
                                 <div className="flex items-center gap-1.5">
                                     <span className="w-2.5 h-2.5 bg-green-500 rounded-full animate-pulse" />
-                                    <span className="text-xs font-medium">Available Summer/Winter 2026</span>
+                                    <span className="text-xs font-medium">Available Summer 2027</span>
                                 </div>
                             </div>
                         </div>

@@ -10,6 +10,13 @@ const GithubIcon = ({ className }) => (
 
 const projects = [
     {
+        title: "AI GlobeScout",
+        description: "AI-powered Chrome extension that scans any webpage for travel destinations using Claude and pins them on an interactive 3D globe with real-world topography. Features live weather, timezone data, and Claude-generated context on every pin. Backend deployed on Netlify with CI/CD from GitHub.",
+        image: "/projects/project0.jpg",
+        tags: ["React", "Vite", "CesiumJS", "Netlify Functions", "Claude API", "Manifest V3"],
+        github: "https://github.com/payalmistryy/Ai-GlobeScout",
+    },
+    {
         title: "Auto Calendar Chrome Extension",
         description: "Chrome extension that parses selected webpage text and converts it into structured calendar events with ICS file export. Built at Norse Hacks Hackathon with cross-platform support for Google Calendar, Apple Calendar, and Outlook.",
         image: "/projects/project1.png",

@@ -133,10 +133,10 @@ export const Contact = () => {
                         </span>
                         <div>
                             <p className="text-sm font-semibold text-foreground">
-                                Open to Summer 2026 Internships
+                                Open to Summer 2027 Internships
                             </p>
                             <p className="text-sm text-muted-foreground mt-1">
-                                Actively seeking software engineering internship opportunities for Summer 2026. Whether you're a recruiter, engineering lead, or fellow developer with an interesting project — I'd love to connect.
+                                Actively seeking software engineering internship opportunities for Summer 2027. Whether you're a recruiter, engineering lead, or fellow developer with an interesting project — I'd love to connect.
                             </p>
                         </div>
                     </div>
