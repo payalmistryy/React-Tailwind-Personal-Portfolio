@@ -39,7 +39,7 @@ export const About = () => {
                                 I hold an AWS Cloud Practitioner certification and a Google AI 
                                 Essentials credential, and I'm continuously expanding my knowledge 
                                 of cloud architecture and AI-assisted development. I'm seeking a 
-                                summer 2026 software engineering internship where I can contribute 
+                                summer 2027 software engineering internship where I can contribute 
                                 to meaningful projects and grow alongside experienced engineers.
                             </p>
                         </div>

@@ -89,7 +89,7 @@ export const Hero = () => {
                                 PSU CS student with hands-on experience building browser extensions,
                                 designing object-oriented systems, and developing modern web applications.
                                 Passionate about leveraging AI tools to build smarter software.
-                                Currently seeking a summer 2026 software engineering internship.
+                                Currently seeking a summer 2027 software engineering internship.
                             </p>
                         </div>
                         {/* CTA Buttons */}
