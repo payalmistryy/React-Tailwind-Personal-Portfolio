@@ -36,9 +36,9 @@ export const About = () => {
                                 and built to last.
                             </p>
                             <p>
-                                I hold an AWS Cloud Practitioner certification and a Google AI 
-                                Essentials credential, and I'm continuously expanding my knowledge 
-                                of cloud architecture and AI-assisted development. I'm seeking a 
+                                I hold a Google AI Essentials credential and I'm working toward my
+                                AWS Cloud Practitioner certification, continuously expanding my knowledge
+                                of cloud architecture and AI-assisted development. I'm seeking a
                                 summer 2027 software engineering internship where I can contribute 
                                 to meaningful projects and grow alongside experienced engineers.
                             </p>
